@@ -1,0 +1,15 @@
+$("#notice").hide();
+$('#cart').html("<%=j render @cart %>");
+
+//if ($('#cart tr').length == 1) { $('#cart').show('blind', 1000); }
+<% if @cart.total_items == 1 %>
+$('#cart').show('blind', 2000);
+<% end %>
+
+//$('#current_item').css({'background-color':'#88ff88'});
+$('#current_item').animate({height:'40px'}, 500);
+$('#current_item').animate({height:'30px'}, 500);
+//$('#current_item').animate({'background-color':'#114411'}, 1000);   // 不可用
+$("#current_item").animate({    opacity: 0.5}, 500 );
+$("#current_item").animate({    opacity: 0.7}, 500 );
+$("#current_item").animate({    opacity: 1}, 500 );
