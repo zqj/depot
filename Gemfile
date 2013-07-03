@@ -37,3 +37,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use debugger
 # gem 'debugger'
+
+ group :production do
+   gem 'mysql'
+ end
