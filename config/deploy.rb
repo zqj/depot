@@ -1,4 +1,5 @@
-set :user, 'root'
+set :user, 'ruby'
+set :use_sudo, false
 set :domain, '223.5.23.49'
 set :application, "depot"
 set :repository,  "https://github.com/zqj/depot.git"
