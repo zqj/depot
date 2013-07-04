@@ -6,7 +6,7 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
-require 'bundler/capistrano'
+
 # be sure to change these
 set :user, 'ruby'
 set :use_sudo, false
