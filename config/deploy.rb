@@ -7,14 +7,14 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 
+
 # be sure to change these
 set :user, 'ruby'
 set :password, 'wjb@49'
-set :use_sudo, false
 set :domain, '223.5.23.49'
 set :application, "depot"
 set :repository,  "https://github.com/zqj/depot.git"
-set :scm, :git
+
 # adjust if you are using RVM, remove if you are not
 #require "rvm/capistrano"
 
@@ -27,6 +27,31 @@ role :web, "223.5.23.49"                          # Your HTTP server, Apache/etc
 role :app, "223.5.23.49"                          # This may be the same as your `Web` server
 role :db,  "223.5.23.49", :primary => true # This is where Rails migrations will run
 role :db,  "223.5.23.49"
+
+require "rvm/capistrano"
+set :rvm_path,"/home/ruby/.rvm"
+set :rvm_bin_path,"/home/ruby/.rvm/bin"
+set :rvm_ruby_string, 'ruby-1.9.3-p448@rails32'
+set :rvm_type, :system
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+
+
+
+
+set :default_environment, {
+  'PATH' => "/home/ruby/.rvm/bin:/home/ruby/.rvm/rubies/ruby-1.9.3-p448/bin:$PATH",
+  'RUBY_VERSION' => 'ruby 1.9.3',
+  'GEM_HOME'     => '/home/ruby/.rvm/gems/ruby-1.9.3-p448@rails32/gems',
+  'GEM_PATH'     => '/home/ruby/.rvm/gems/ruby-1.9.3-p448@rails32/gems',
+  'BUNDLE_PATH'  => '/home/ruby/.rvm/gems/ruby-1.9.3-p448@rails32/gems'  # If you are using bundler.
+}
+
+namespace :rvm do
+  task :trust_rvmrc do
+    run "rvm rvmrc trust #{release_path}"
+  end
+end
+after "deploy", "rvm:trust_rvmrc"
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
@@ -60,6 +85,7 @@ set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
 set :rails_env, :production
+
 
 namespace :deploy do
   desc "cause Passenger to initiate a restart"
