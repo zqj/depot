@@ -39,5 +39,5 @@ gem 'capistrano'
 # gem 'debugger'
 
  group :production do
-   gem 'mysql2'
+   gem 'mysql'
  end
