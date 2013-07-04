@@ -41,5 +41,5 @@ gem 'capistrano_colors'
 # gem 'debugger'
 
  group :production do
-   gem 'mysql'
+   gem 'mysql2'
  end
