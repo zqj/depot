@@ -9,11 +9,12 @@
 
 # be sure to change these
 set :user, 'ruby'
+set :password, 'wjb@49'
 set :use_sudo, false
 set :domain, '223.5.23.49'
 set :application, "depot"
 set :repository,  "https://github.com/zqj/depot.git"
-
+set :scm, :git
 # adjust if you are using RVM, remove if you are not
 #require "rvm/capistrano"
 
