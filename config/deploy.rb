@@ -18,7 +18,7 @@ set :repository,  "https://github.com/zqj/depot.git"
 # adjust if you are using RVM, remove if you are not
 #require "rvm/capistrano"
 
-set :deploy_to, "/home/ruby/production"
+set :deploy_to, "/home/ruby/production2"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`

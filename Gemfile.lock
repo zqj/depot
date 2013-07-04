@@ -132,6 +132,7 @@ DEPENDENCIES
   execjs
   jquery-rails (> 3.0.0)
   rails (= 3.2.13)
+  rake
   rvm-capistrano
   sass-rails (~> 3.2.3)
   sqlite3

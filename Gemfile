@@ -38,6 +38,7 @@ gem 'capistrano'
 gem 'rvm-capistrano'
 gem 'capistrano_colors'
 
+gem 'rake'
 # To use debugger
 # gem 'debugger'
 
