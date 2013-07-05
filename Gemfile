@@ -40,7 +40,7 @@ gem 'capistrano_colors'
 
 gem 'rake'
 gem "thin"
-gem "rack" "1.4.5"
+
 # To use debugger
 # gem 'debugger'
 
